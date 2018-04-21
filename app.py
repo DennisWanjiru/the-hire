@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for
+from flask import Flask, redirect, render_template, url_for
 from employee import Employee
 
 app = Flask(__name__)
@@ -13,12 +13,12 @@ def root():
 
 @app.route('/signup')
 def signup():
-    return 'Sign Up'
+    return render_template('signup.html')
 
 
 @app.route('/login')
 def login():
-    return 'Log in'
+    return render_template('login.html')
 
 
 if __name__ == "__main__":

@@ -17,7 +17,7 @@ def root():
 
 @app.route('/index')
 def index():
-    return render_template('index.html', employees=employees)
+    return render_template('pages/index.html', employees=employees)
 
 
 @app.route('/signup', methods=["GET", "POST"])
@@ -28,7 +28,7 @@ def signup():
 
         return redirect(url_for('login'))
 
-    return render_template('signup.html')
+    return render_template('pages/signup.html')
 
 
 @app.route('/login', methods=["GET", "POST"])
@@ -44,7 +44,7 @@ def login():
             return "Incorrect Credentials"
         return "Incorrect Credentials"
 
-    return render_template('login.html')
+    return render_template('pages/login.html')
 
 
 if __name__ == "__main__":

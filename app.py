@@ -3,12 +3,16 @@ from employee import Employee
 
 app = Flask(__name__)
 
-employees = []
+employees = [Employee('Dennis Wanjiru', 'denniswanjiru71@gmail.com', 'first', 'password')]
+
+
+def find_user(email):
+    return [user for user in employees if user.email == email]
 
 
 @app.route('/')
 def root():
-    return redirect(url_for('index'))
+    return redirect(url_for('login'))
 
 
 @app.route('/index')
@@ -27,8 +31,19 @@ def signup():
     return render_template('signup.html')
 
 
-@app.route('/login')
+@app.route('/login', methods=["GET", "POST"])
 def login():
+    if request.method == "POST":
+        email = request.form.get("email")
+        password = request.form.get("password")
+        user = find_user(email)
+
+        if user != []:
+            if password == user[0].password:
+                return user[0].name
+            return "Incorrect Credentials"
+        return "Incorrect Credentials"
+
     return render_template('login.html')
 
 

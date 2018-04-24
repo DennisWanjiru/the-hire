@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %} Login {% endblock %} 
+
+{% block content %} 
+	<h1>All Employees</h1>
+
+	{% for employee in employees %}
+		<p>{{ employee.name }}</p>
+		<i>{{ employee.benefits }}</i>
+	{% endfor %}
+{% endblock %} 

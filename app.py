@@ -26,7 +26,7 @@ def signup():
         new_employee = Employee(request.form.get('name'), request.form.get('email'), request.form.get('category'), request.form.get('password'))
         employees.append(new_employee)
 
-        return redirect(url_for('index'))
+        return redirect(url_for('login'))
 
     return render_template('signup.html')
 

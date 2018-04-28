@@ -1,3 +1,5 @@
 /env
 __pycache__/
 .sass-cache/
+.app.py.swp
+.vscode/

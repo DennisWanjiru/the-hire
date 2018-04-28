@@ -5,20 +5,23 @@
 
 {% block content %} 
 	<form action="" method="POST">
-		<div class="input-field"> 
-			<div class="form-group">
-				<input type="email" name="email" placeholder="Email">
-			</div>
+		<div class="input-field">
+		  <input type="email" name="email">
+		  <label for="email" data-error="wrong" data-success="right">Email</label>
+		</div>
 
-			<div class="form-group">
-				<input type="password" name="password" placeholder="Password">
-			</div>
-			
-			<div class="form-group">
-				<button type="submit" class="btn blue">Sign in</button>
-			</div>
+		<div class="input-field">
+		  <input type="password" name="password">
+		  <label for="password">Password</label>
+		</div>
+		
+		<div class="input-field">
+			<button type="submit" class="btn blue">Sign in</button>
+		</div>
+
+		<div class="input-field">
+			Don't have an account? <a href="{{ url_for('signup') }}">Sign up now</a>
 		</div>
 	</form>
-
 
 {% endblock %} 

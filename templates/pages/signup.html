@@ -1,10 +1,43 @@
-{% extends 'layout.html' %} {% block title %} Signup {% endblock %} {% block content %}
+{% extends 'layouts/auth.html' %} 
+
+{% block title %} Sign up {% endblock %} 
+
+{% block content %}
 <form action="" method="POST">
-	 <input type="text" placeholder="Full Name" name="name">
-	 <input type="text" placeholder="Email" name="email">
-	 <input type="text" placeholder="" name="category">
-	 <input type="password" placeholder="Password" name="password">
-	 <input type="password" placeholder="Confirm Password" name="password_confirmation">
-	 <input type="submit" value="Submit">
+
+	<div class="input-field">
+		<input type="text" name="name">
+    	<label for="name">Name</label>
+	</div>
+
+	<div class="input-field">
+		<input type="text" name="email">
+    	<label for="email" data-error="wrong" data-success="right">Email</label>
+	</div>
+
+	<div class="input-field">
+		<input type="text" name="category">
+    	<label for="category">Category</label>
+	</div>
+
+	<div class="input-field">
+		<input type="password" name="password">
+    	<label for="password">Password</label>
+	</div>
+
+	<div class="input-field">
+		<input type="password" name="password_confirmation">
+    	<label for="password_confirmation">Confirm Password</label>
+	</div>
+
+	 <div class="input-field">
+	 	<button type="submit" class="btn blue">Sign up</button>
+	 </div>
+
+	 <div class="input-field">
+	 	Already have an account? <a href="{{ url_for('login') }}">Sign in here</a>
+	 </div>
 </form>
+
+
 {% endblock %}

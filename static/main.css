@@ -1,7 +1,8 @@
-main {
-  height: 100%; }
+.auth {
+  background: blue;
+}
 
 .card {
-  margin-top: 70px; }
-
+  margin-top: 70px;
+}
 /*# sourceMappingURL=main.css.map */
